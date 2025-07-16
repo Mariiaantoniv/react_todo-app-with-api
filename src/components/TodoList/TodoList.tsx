@@ -103,7 +103,7 @@ export const TodoList: React.FC<Props> = ({
         {visibleTodos.map(todo => (
           <CSSTransition key={todo.id} timeout={300} classNames="item">
             <div
-              key={todo.id}
+              // key={todo.id}
               data-cy="Todo"
               className={classNames('todo', {
                 completed: todo.completed,
@@ -172,7 +172,7 @@ export const TodoList: React.FC<Props> = ({
         ))}
 
         {tempTodo && (
-          <CSSTransition key={tempTodo.id} timeout={300} classNames="temp-item">
+          <CSSTransition key={0} timeout={300} classNames="temp-item">
             <div data-cy="Todo" className="todo">
               <label className="todo__status-label">
                 <input

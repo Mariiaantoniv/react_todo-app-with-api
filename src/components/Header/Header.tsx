@@ -22,7 +22,7 @@ export const Header: React.FC<Props> = ({
   toggleAll,
 }) => (
   <header className="todoapp__header">
-    {todos.length && !loading && (
+    {todos.length > 0 && !loading && (
       <button
         type="button"
         className={classNames('todoapp__toggle-all', {

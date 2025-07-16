@@ -76,6 +76,7 @@ export const App: React.FC = () => {
       const createdTodo = await addTodo(newTodo);
 
       setTodos(prev => [...prev, createdTodo]);
+
       setTitle('');
     } catch {
       hiddenError('Unable to add a todo');
