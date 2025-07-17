@@ -46,6 +46,7 @@ export const TodoList: React.FC<Props> = ({
         return true;
     }
   });
+
   const handleUpdateTitle = async (todo: Todo) => {
     const titleTrim = editTitle.trim();
 
@@ -103,7 +104,6 @@ export const TodoList: React.FC<Props> = ({
         {visibleTodos.map(todo => (
           <CSSTransition key={todo.id} timeout={300} classNames="item">
             <div
-              // key={todo.id}
               data-cy="Todo"
               className={classNames('todo', {
                 completed: todo.completed,
@@ -124,7 +124,7 @@ export const TodoList: React.FC<Props> = ({
               {editTodo === todo.id ? (
                 <input
                   data-cy="TodoTitleField"
-                  className="todo__edit-field"
+                  className="todo__title-field"
                   value={editTitle}
                   onChange={e => setEditTitle(e.target.value)}
                   onBlur={() => handleUpdateTitle(todo)}
